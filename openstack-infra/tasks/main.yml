@@ -7,7 +7,7 @@
 
 - name: Add Ubuntu Cloud Archive Newton PPA
   apt_repository:
-    repo: "ppa:ubuntu-cloud-archive/newton"
+    repo: "deb http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/newton main"
   register: ppa_added
 
 - name: Update Apt
