@@ -1,0 +1,17 @@
+---
+# Common tasks for Openstack Infra nodes
+- name: Add Ubuntu Cloud Keyring
+  apt:
+    name: ubuntu-cloud-keyring
+    state: present
+
+- name: Add Ubuntu Cloud Archive Newton PPA
+  apt_repository:
+    repo: "ppa:ubuntu-cloud-archive/newton"
+  register: ppa_added
+
+- name: Update Apt
+  apt:
+    upgrade: dist
+    update_cache: yes
+  when: ppa_added.changed

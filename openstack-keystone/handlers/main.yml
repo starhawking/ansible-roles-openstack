@@ -1,0 +1,4 @@
+- name: config changed
+  service:
+    name: apache2
+    state: restarted

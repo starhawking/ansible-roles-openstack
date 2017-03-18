@@ -1,0 +1,14 @@
+---
+# Tasks for creating Keystone Configs
+
+- name: Add Keystone Config
+  template:
+    src: files/keystone.conf.j2
+    dest: /etc/keystone/keystone.conf
+    backup: yes
+
+- name: Add catalog templates
+  template:
+    src: files/catalog.templates.j2
+    dest: /etc/keystone/catalog.templates
+    backup: yes
